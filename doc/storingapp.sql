@@ -4,7 +4,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `storingapp`
 --
-DROP DATABASE `storingapp`;
+DROP DATABASE IF EXISTS `storingapp`;
 CREATE DATABASE IF NOT EXISTS `storingapp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `storingapp`;
 
