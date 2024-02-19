@@ -14,7 +14,7 @@
     <div class="container">
         <h1>Nieuwe melding</h1>
 
-        <form action="<?php echo $base_url; ?>/app/Controllers/meldingenController.php" method="POST">
+        <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
 
             <div class="form-group">
                 <label for="attractie">Naam attractie:</label>

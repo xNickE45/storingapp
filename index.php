@@ -9,11 +9,11 @@
 <body>
 
     <?php require_once 'header.php'; ?>
-    
+
     <div class="container home">
 
         <h1>Welkom bij de technische dienst</h1>
-        <img src="img/logo-big-fill-only.png" alt="logo">
+        <img src="/public_html/img/logo-big-fill-only.png" alt="logo">
 
     </div>
 
