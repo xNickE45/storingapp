@@ -3,12 +3,12 @@
 
 <head>
     <title>StoringApp</title>
-    <?php require_once 'head.php'; ?>
+    <?php require_once 'resources/views/components/head.php'; ?>
 </head>
 
 <body>
 
-    <?php require_once 'header.php'; ?>
+    <?php require_once 'resources/views/components/header.php'; ?>
 
     <div class="container home">
 
