@@ -22,6 +22,8 @@
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
+                <select name="group" id="group">
+                    <option value="">
                 <!-- hier komt een dropdown -->
             </div>
             <div class="form-group">
