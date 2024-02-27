@@ -4,10 +4,18 @@
 $attractie = $_POST['attractie'];
 if(empty($attractie))
 { 
-    $errors[]= "Vuldeattractie-naamin.";
+    $errors[]= "Vul de attractie-naam in.";
 }
 $type = $_POST['type'];
+if(empty($type))
+{
+    $errors[]="Vul voor type een geldige waarde in.";
+}
 $capaciteit = $_POST['capaciteit']; 
+if(!is_numeric($capaciteit))
+{
+    $errors[]="Vul voor capaciteit een geldig getal in.";
+}
 if(isset($_POST['prioriteit']))
 {
     $prioriteit = 1;
@@ -17,7 +25,17 @@ else
     $prioriteit = 0;
 }
 $melder = $_POST['melder'];
+if(empty($melder))
+{
+    $errors[]="Voer je naam in dat jij de melder bent.";
+}
 $overig = $_POST['overig'];
+
+if(isset($errors))
+{
+    var_dump($errors);die();
+}
+
 
 // echo $attractie . " / " . $capaciteit . " / " . $melder;
 
