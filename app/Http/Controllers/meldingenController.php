@@ -60,7 +60,8 @@ if ($_GET['action'] == 'create'){
 }
 
 
-if($_GET['action'] == 'edit'){
+if($_GET['action'] == 'edit'){ // deze if statement geeft alle errors aan dat je niet zonder die waardes veder kan
+    $id = $_POST['id'];
     $attractie = $_POST['attractie'];
     if(empty($attractie))
     { 
@@ -98,17 +99,29 @@ if($_GET['action'] == 'edit'){
 
     require_once '../../../config/conn.php';
 
-    $query = "UPDATE meldingen SET attractie = :attractie, type = :type, capaciteit = :capaciteit, prioriteit = :prioriteit, melder = :melder, overige_info = :overige_info WHERE id = :id";
+    $query = "UPDATE meldingen SET attractie = :attractie, type = :type, capaciteit = :capaciteit, prioriteit = :prioriteit, melder = :melder, overige_info = :overige_info WHERE id = :id"; // de update query
     $statement = $conn->prepare($query);
     $statement->execute([
-        ":attractie" => $attractie,
-        ":type" => $type,
+        ":attractie" => $attractie, // de attractie waarde
+        ":type" => $type, // de type attractie waarde waar de placeholder een waarde wordt etc.
         ":capaciteit" => $capaciteit,
         ":prioriteit" => $prioriteit,
         ":melder" => $melder,
         ":overige_info" => $overig,
-        ":id" => $id,
+            ":id" => $id,
     ]);
     header("location: ".$base_url."/resources/views/meldingen/index.php?msg=Melding bijgewerkt");
+}
+if($_GET['action'] == 'delete'){
+    $id = $_POST['id'];
+
+    require_once '../../../config/conn.php';
+
+    $query = "DELETE FROM meldingen WHERE id = :id";
+    $statement = $conn->prepare($query);
+    $result = $statement->execute([
+        ":id" => $id,
+    ]);
+    header("location: ".$base_url."/resources/views/meldingen/index.php?msg=Melding verwijderd");
 }
 $items = $statement->fetchALL(PDO::FETCH_ASSOC);

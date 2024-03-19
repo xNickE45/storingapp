@@ -27,7 +27,7 @@
         <h1>Update melding</h1>
 
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php?action=edit" method="POST">
-            <input type="text" value="<?php echo $_GET['id']; ?>" name="id" style="display none;"> </input>
+            <input type="text" value="<?php echo $_GET['id']; ?>" name="id" style="display: none;"> </input>
             <div class="form-group">
                 <label for="attractie">Naam attractie:</label>
                 <input type="text" name="attractie" id="attractie" class="form-input" value="<?php echo $melding['attractie']; ?>">
@@ -66,9 +66,13 @@
             
 
             <input type="submit" value="Update melding">
-
+        </form>
+        <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php?action=delete" method="POST">
+            <input type="text" value="<?php echo $_GET['id']; ?>" name="id" style="display: none;">
+            <input type="submit" value="Delete melding"> <!-- de button om de melding te verwijderen -->
         </form>
     </div>
+
 
 </body>
 
