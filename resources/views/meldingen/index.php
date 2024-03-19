@@ -53,7 +53,7 @@
                     <td><?php echo $melding['melder']; ?></td>
                     <td><?php echo $melding['gemeld_op']; ?></td>
                     <td><?php echo $melding['overige_info']; ?></td>
-                    <td><a href="edit.php?id=>">Aanpassen</a></td>
+                    <td><a href="edit.php?id=<?php echo $melding['id']; ?>">Aanpassen</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
