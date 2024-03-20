@@ -60,7 +60,7 @@ if ($_GET['action'] == 'create'){
 }
 
 
-if($_GET['action'] == 'edit'){ // deze if statement geeft alle errors aan dat je niet zonder die waardes veder kan
+if($_GET['action'] == 'edit'){ // deze if statement geeft alle errors aan dat je niet zonder die waardes veder kan en de query
     $id = $_POST['id'];
     $attractie = $_POST['attractie'];
     if(empty($attractie))
